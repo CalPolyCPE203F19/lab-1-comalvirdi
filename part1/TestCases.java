@@ -120,7 +120,7 @@ public class TestCases
    @Test
    public void testBetterLoop3()
    {
-      assertTrue(BetterLoop.contains(new int[] {7, 5, 2, 6}, 16));
+      assertEquals(BetterLoop.contains(new int[] {7, 5, 2, 6}, 16), false);
       
       /* TO DO: Write a valid test case where the expected result is false. */
    }
@@ -159,13 +159,44 @@ public class TestCases
        */
       assertEquals(new HashSet<>(expected),
          new HashSet<>(ExampleMap.highEnrollmentStudents(
-            courseListsByStudent, 16)));
+            courseListsByStudent, 4)));
    }
 
    @Test
    public void testExampleMap2()
    {
-      fail("Missing ExampleMap2");
+      List<String> expected = Arrays.asList("Julie", "Paul","Zoe");
+      Map<String, List<Course>> courseListsByStudent = new HashMap<>();
+
+      courseListsByStudent.put("Julie",
+         Arrays.asList(
+            new Course("CPE 123", 4),
+            new Course("CPE 101", 4),
+            new Course("CPE 202", 4),
+            new Course("CPE 203", 4),
+            new Course("CPE 225", 4)));
+      courseListsByStudent.put("Paul",
+         Arrays.asList(
+            new Course("CPE 101", 4),
+            new Course("CPE 202", 4),
+            new Course("CPE 203", 4),
+            new Course("CPE 225", 4)));
+      courseListsByStudent.put("Zoe",
+         Arrays.asList(
+            new Course("CPE 123", 4),
+            new Course("CPE 203", 4),
+            new Course("CPE 471", 4),
+            new Course("CPE 473", 4),
+            new Course("CPE 476", 4),
+            new Course("CPE 572", 4)));
+
+      /*
+       * Why compare HashSets here?  Just so that the order of the
+       * elements in the list is not important for this test.
+       */
+      assertEquals(new HashSet<>(expected),
+         new HashSet<>(ExampleMap.highEnrollmentStudents(
+            courseListsByStudent, 3)));
       /* TO DO: Write another valid test case. */
    }
 }
