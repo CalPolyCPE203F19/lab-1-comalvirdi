@@ -19,7 +19,7 @@ class ExampleMap
          // System.out.println(student.getKey());
          // System.out.println(student.getValue());
          // System.out.println(getList.size());
-         if (unitThreshold < size){
+         if (unitThreshold < 4*size){
             overEnrolledStudents.add(student.getKey());
             
 
