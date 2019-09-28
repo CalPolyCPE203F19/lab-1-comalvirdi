@@ -16,6 +16,7 @@ class ExampleMap
 
          for (Course c: student.getValue()) {
             unitCount += c.getNumUnits();
+            System.out.println(c.getNumUnits());
          }
          
          
