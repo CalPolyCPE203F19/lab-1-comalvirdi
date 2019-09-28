@@ -22,12 +22,12 @@ public class Point
 	}
 
 	public double getAngle(){
-		return Math.atan(yCord/xCord);
+		return Math.atan2(yCord, xCord);
 	}
 
 	public Point rotate90(){
-		double newX = -1* yCord;
-		double newY = xCord;
+		double newX = -1* this.yCord;
+		double newY = this.xCord;
 
 		Point newPoint = new Point(newX, newY);
 		return newPoint;
